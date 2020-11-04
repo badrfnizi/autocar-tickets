@@ -14,14 +14,14 @@ public class Autocar_tickets {
 
     public static double TravelPrice(String city1, String city2) {
         double price = 0;
-        int index1 = getStationNumber(city1);
-        int index2 = getStationNumber(city2);
-        if (index1 < index2) {
-            for (int i = index1, j=0; i < index2; i++, j++) {
+        int indexA = getStationNumber(city1);
+        int indexB = getStationNumber(city2);
+        if (indexA < indexB) {
+            for (int i = indexA, j=0; i < indexB; i++, j++) {
                 price = price + Prices[i] * (1 - j * 0.1);
             }
         } else {
-            for (int i = index1-1, j=0; i >= index2; i--, j++) {
+            for (int i = indexA-1, j=0; i >= indexB; i--, j++) {
                 price = price + Prices[i] * (1 - j * 0.1);
             }
         }
